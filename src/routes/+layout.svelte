@@ -4,10 +4,21 @@
   import {onMount} from "svelte";
 
   onMount(() => {
-    document.getElementById('problems-menu').addEventListener('click', function () {
-      document.getElementById('problems-dropdown').toggleAttribute('hidden');
+    const problemsMenu = document.getElementById('problems-menu');
+    const dropdown = document.getElementById('problems-dropdown');
+    problemsMenu.addEventListener('click', function () {
+      dropdown.toggleAttribute('hidden');
     });
-  })
+
+    // 드롭다운 메뉴의 모든 링크에 대해 클릭 이벤트 핸들러 추가
+    const nav_items = document.getElementsByClassName('relative')[0];
+    const dropdownLinks = nav_items.querySelectorAll('a');
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        dropdown.setAttribute('hidden', true);
+      });
+    });
+  });
 </script>
 
 <div class="flex flex-col min-h-screen">
