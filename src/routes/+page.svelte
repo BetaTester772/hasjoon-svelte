@@ -63,11 +63,11 @@
         <div class="content flex flex-row flex-grow">
             <div class="text-container flex-1">
                 <h1><strong>오늘까지 {Static.name}는</strong></h1>
-                <h1><strong>{Static.members}명</strong> 구성원이</h1>
-                <h1><strong>{Static.problemsSolved}개</strong> 문제를 풀었고</h1>
+                <h1><strong>{Static.members}명</strong>의 구성원이</h1>
+                <h1><strong>{Static.problemsSolved}개</strong>의 문제를 풀었고</h1>
                 <h1><strong>AC rating {Static.acRating}</strong>로</h1>
-                <h1>전체 <strong>{Static.rank}등</strong>,</h1>
-                <h1>고등학교 <strong>{Static.hsRank}등</strong>입니다.</h1>
+                <h1>고등학교 <strong>{Static.hsRank}등</strong>,</h1>
+                <h1>전체 <strong>{Static.rank}등</strong>입니다.</h1>
             </div>
             <div class="graph-container flex-1">
                 <canvas id="graphCanvas"></canvas>
@@ -120,6 +120,10 @@
     }
 
     @media (max-width: 768px) {
+        .content {
+            @apply flex-col;
+        }
+
         .text-container {
             @apply text-2xl;
         }
@@ -142,8 +146,18 @@
         @apply flex text-sm p-4 w-full;
     }
 
+    @media (max-width: 1024px) {
+        .footer {
+            @apply text-xs p-2 ;
+        }
+    }
+
     .footer-section {
         @apply flex-1;
+    }
+
+    main {
+        font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     }
 </style>
 
