@@ -44,7 +44,7 @@
         const canvas = document.getElementById('graphCanvas');
         const ctx = canvas.getContext('2d');
 
-        chart = new Chart(ctx, {
+        let chart = new Chart(ctx, {
           type: 'doughnut',
           data: graphData,
           options: {
