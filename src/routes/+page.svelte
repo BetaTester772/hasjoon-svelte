@@ -146,14 +146,18 @@
         @apply flex text-sm p-4 w-full;
     }
 
-    @media (max-width: 1024px) {
-        .footer {
-            @apply text-xs p-2 ;
-        }
-    }
-
     .footer-section {
         @apply flex-1;
+    }
+
+    @media (max-width: 1024px) {
+        .footer {
+            @apply text-xs p-2 flex-col;
+        }
+
+        .footer-section {
+            @apply flex-1 text-center mb-1;
+        }
     }
 
     main {
