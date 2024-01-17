@@ -2,7 +2,7 @@
   import {onMount} from 'svelte';
   import Chart from 'chart.js/auto';
 
-  const url = "http://127.0.0.1:8000"
+  const url = "https://api.hasjoon.net/"
 
   let Static = {
     name: "{학교명}",
