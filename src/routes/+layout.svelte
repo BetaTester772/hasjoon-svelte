@@ -27,25 +27,25 @@
             <div class="relative flex items-center justify-between h-16">
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="hidden sm:block sm:ml-6">
-                        <div class="flex space-x-4">
+                        <div class="flex space-x-4 text-base">
                             <a href="/"
-                               class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">홈</a>
+                               class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">홈</a>
 
                             <div class="relative">
                                 <button type="button"
-                                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"
                                         id="problems-menu" aria-haspopup="true">
                                     문제 <span>&#9662;</span>
                                 </button>
                                 <div class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
                                      id="problems-dropdown" hidden>
-                                    <a href="/problem" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">모든
+                                    <a href="/problem" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">모든
                                         문제</a>
                                     <a href="/problem/level"
-                                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">레벨별
+                                       class="block px-4 py-2 text-gray-700 hover:bg-gray-100">레벨별
                                         문제</a>
                                     <a href="/problem/tag"
-                                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">태그별
+                                       class="block px-4 py-2 text-gray-700 hover:bg-gray-100">태그별
                                         문제</a>
                                 </div>
                             </div>
