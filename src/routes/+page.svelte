@@ -2,6 +2,8 @@
   import {onMount} from 'svelte';
   import Chart from 'chart.js/auto';
 
+  const url = "http://127.0.0.1:8000"
+
   let Static = {
     name: "{학교명}",
     members: null,
@@ -17,7 +19,7 @@
 
 
   onMount(() => {
-    fetch("http://127.0.0.1:8000/organization")
+    fetch(url + "/organization")
       .then(res => res.json())
       .then(data => {
         Static.name = data.organization_data.name;
@@ -65,7 +67,7 @@
                 <h1><strong>{Static.problemsSolved}개</strong> 문제를 풀었고</h1>
                 <h1><strong>AC rating {Static.acRating}</strong>로</h1>
                 <h1>전체 <strong>{Static.rank}등</strong>,</h1>
-                <h1>고등학교 <strong>{Static.hsRank}등</strong> 입니다.</h1>
+                <h1>고등학교 <strong>{Static.hsRank}등</strong>입니다.</h1>
             </div>
             <div class="graph-container flex-1">
                 <canvas id="graphCanvas"></canvas>
@@ -80,7 +82,8 @@
             </div>
             <div class="footer-section flex-1 text-center">
                 <p>Contact</p>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=has_22121@hana.hs.kr" target="_blank">has_22121@hana.hs.kr</a>
+                <a style="color: #2dd4ad" href="https://mail.google.com/mail/?view=cm&fs=1&to=has_22121@hana.hs.kr"
+                   target="_blank">has_22121@hana.hs.kr</a>
             </div>
             <div class="footer-section flex-1 text-right">
                 <p>This site simply presents the information gathered from
