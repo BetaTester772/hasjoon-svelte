@@ -2,19 +2,17 @@
   import {onMount} from 'svelte';
   import Chart from 'chart.js/auto';
 
-  let chart;
-
-
   let Static = {
-    name: "",
-    members: 0,
-    problemsSolved: 0,
-    acRating: 0,
-    rank: 0,
-    solved: 0,
-    tried: 0,
-    failed: 0,
-    notTried: 0,
+    name: "{학교명}",
+    members: null,
+    problemsSolved: null,
+    acRating: null,
+    rank: null,
+    hsRank: null,
+    solved: null,
+    tried: null,
+    failed: null,
+    notTried: null,
   };
 
 
@@ -22,22 +20,23 @@
     fetch("http://127.0.0.1:8000/organization")
       .then(res => res.json())
       .then(data => {
-        Static.name = data.name;
-        Static.members = data.user_count;
-        Static.problemsSolved = data.solved_count;
-        Static.acRating = data.rating;
-        Static.rank = data.rank;
+        Static.name = data.organization_data.name;
+        Static.members = data.organization_data.user_count;
+        Static.problemsSolved = data.organization_data.solved_count;
+        Static.acRating = data.organization_data.rating;
+        Static.rank = data.organization_data.rank;
+        Static.hsRank = data.organization_data.rank_high_school;
 
-        const solved = data.solved_count;
+        const solved = data.organization_data.solved_count;
         const tried = 0;
         const failed = 0;
-        const notTried = data.count - data.solved_count;
+        const notTried = 29168 - data.organization_data.solved_count;
 
         const graphData = {
-          labels: ['푼 문제', '만점에 도전하는 문제', '시도한 문제', '풀 문제'],
+          labels: ['푼 문제', '만점에 도전하는 문제', '시도한 문제', '기타'],
           datasets: [{
             data: [solved, tried, failed, notTried],
-            backgroundColor: ['#36A2EB', '#FFCE56', '#FF6384', '#4BC0C0'],
+            backgroundColor: ['#2dd4ad', '#FFCE56', '#FF6384', '#36A2EB'],
             borderWidth: 1
           }]
         };
@@ -58,24 +57,32 @@
   });
 </script>
 
-
-<div class="container mx-auto flex">
-    <div class="text-container flex-1">
-        <h1><strong>오늘까지 {Static.name}는</strong></h1>
-        <h1><strong>{Static.members}명</strong> 구성원이</h1>
-        <h1><strong>{Static.problemsSolved}개</strong> 문제를 풀었고</h1>
-        <h1><strong>AC rating {Static.acRating}</strong>로</h1>
-        <h1>전체 <strong>{Static.rank}등</strong>입니다.</h1>
+<div class="container mx-auto flex flex-col min-h-screen">
+    <div class="content flex flex-row flex-grow">
+        <div class="text-container flex-1">
+            <h1><strong>오늘까지 {Static.name}는</strong></h1>
+            <h1><strong>{Static.members}명</strong> 구성원이</h1>
+            <h1><strong>{Static.problemsSolved}개</strong> 문제를 풀었고</h1>
+            <h1><strong>AC rating {Static.acRating}</strong>로</h1>
+            <h1>전체 <strong>{Static.rank}등</strong>,</h1>
+            <h1>고등학교 <strong>{Static.hsRank}등</strong> 입니다.</h1>
+        </div>
+        <div class="graph-container flex-1">
+            <canvas id="graphCanvas"></canvas>
+        </div>
     </div>
-    <div class="graph-container flex-1">
-        <canvas id="graphCanvas"></canvas>
+    <div class="footer p-4 bg-gray-200 text-center">
+        <p>여기는 하단 패널입니다.</p>
     </div>
 </div>
 
-
 <style>
     .container {
-        @apply flex mx-auto max-w-7xl;
+        @apply flex flex-col min-h-screen mx-auto;
+    }
+
+    .content {
+        @apply flex-grow flex flex-row;
     }
 
     .text-container {
@@ -110,6 +117,10 @@
 
     #graphCanvas {
         @apply w-full h-full max-w-lg max-h-96;
+    }
+
+    .footer {
+        @apply bg-gray-200 text-center p-4;
     }
 </style>
 
