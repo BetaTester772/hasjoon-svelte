@@ -156,7 +156,7 @@
         }
 
         .footer-section {
-            @apply flex-1 text-center mb-1;
+            @apply flex-1 text-center mb-2;
         }
     }
 
