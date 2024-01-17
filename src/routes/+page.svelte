@@ -71,8 +71,23 @@
             <canvas id="graphCanvas"></canvas>
         </div>
     </div>
-    <div class="footer p-4 bg-gray-200 text-center">
-        <p>여기는 하단 패널입니다.</p>
+    <div class="footer flex p-4 text-sm w-full">
+        <div class="footer-section flex-1 text-left">
+            <p>All the information of problems, users and icons related to them in this site are borrowed from
+                <a style="color: #0076c0;" href="https://www.acmicpc.net/" target="_blank">Baekjoon</a>
+                and <a style="color: #17ce3a" href="https://solved.ac/" target="_blank">solved.ac</a>
+            </p>
+        </div>
+        <div class="footer-section flex-1 text-center">
+            <p>Contact</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=has_22121@hana.hs.kr" target="_blank">has_22121@hana.hs.kr</a>
+        </div>
+        <div class="footer-section flex-1 text-right">
+            <p>This site simply presents the information gathered from
+                <a style="color: #0076c0;"href="https://www.acmicpc.net/" target="_blank">Baekjoon</a> and
+                <a style="color: #17ce3a" href="https://solved.ac/" target="_blank">solved.ac</a>
+                in an organized manner and is not officially affiliated with them.</p>
+        </div>
     </div>
 </div>
 
@@ -120,7 +135,11 @@
     }
 
     .footer {
-        @apply bg-gray-200 text-center p-4;
+        @apply flex text-sm p-4 w-full;
+    }
+
+    .footer-section {
+        @apply flex-1;
     }
 </style>
 
