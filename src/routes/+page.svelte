@@ -56,40 +56,41 @@
       .catch(err => console.log(err));
   });
 </script>
-
-<div class="container mx-auto flex flex-col min-h-screen">
-    <div class="content flex flex-row flex-grow">
-        <div class="text-container flex-1">
-            <h1><strong>오늘까지 {Static.name}는</strong></h1>
-            <h1><strong>{Static.members}명</strong> 구성원이</h1>
-            <h1><strong>{Static.problemsSolved}개</strong> 문제를 풀었고</h1>
-            <h1><strong>AC rating {Static.acRating}</strong>로</h1>
-            <h1>전체 <strong>{Static.rank}등</strong>,</h1>
-            <h1>고등학교 <strong>{Static.hsRank}등</strong> 입니다.</h1>
+<main>
+    <div class="container mx-auto flex flex-col min-h-screen">
+        <div class="content flex flex-row flex-grow">
+            <div class="text-container flex-1">
+                <h1><strong>오늘까지 {Static.name}는</strong></h1>
+                <h1><strong>{Static.members}명</strong> 구성원이</h1>
+                <h1><strong>{Static.problemsSolved}개</strong> 문제를 풀었고</h1>
+                <h1><strong>AC rating {Static.acRating}</strong>로</h1>
+                <h1>전체 <strong>{Static.rank}등</strong>,</h1>
+                <h1>고등학교 <strong>{Static.hsRank}등</strong> 입니다.</h1>
+            </div>
+            <div class="graph-container flex-1">
+                <canvas id="graphCanvas"></canvas>
+            </div>
         </div>
-        <div class="graph-container flex-1">
-            <canvas id="graphCanvas"></canvas>
+        <div class="footer flex p-4 text-sm w-full">
+            <div class="footer-section flex-1 text-left">
+                <p>All the information of problems, users and icons related to them in this site are borrowed from
+                    <a style="color: #0076c0;" href="https://www.acmicpc.net/" target="_blank">Baekjoon</a>
+                    and <a style="color: #17ce3a" href="https://solved.ac/" target="_blank">solved.ac</a>
+                </p>
+            </div>
+            <div class="footer-section flex-1 text-center">
+                <p>Contact</p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=has_22121@hana.hs.kr" target="_blank">has_22121@hana.hs.kr</a>
+            </div>
+            <div class="footer-section flex-1 text-right">
+                <p>This site simply presents the information gathered from
+                    <a style="color: #0076c0;" href="https://www.acmicpc.net/" target="_blank">Baekjoon</a> and
+                    <a style="color: #17ce3a" href="https://solved.ac/" target="_blank">solved.ac</a>
+                    in an organized manner and is not officially affiliated with them.</p>
+            </div>
         </div>
     </div>
-    <div class="footer flex p-4 text-sm w-full">
-        <div class="footer-section flex-1 text-left">
-            <p>All the information of problems, users and icons related to them in this site are borrowed from
-                <a style="color: #0076c0;" href="https://www.acmicpc.net/" target="_blank">Baekjoon</a>
-                and <a style="color: #17ce3a" href="https://solved.ac/" target="_blank">solved.ac</a>
-            </p>
-        </div>
-        <div class="footer-section flex-1 text-center">
-            <p>Contact</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=has_22121@hana.hs.kr" target="_blank">has_22121@hana.hs.kr</a>
-        </div>
-        <div class="footer-section flex-1 text-right">
-            <p>This site simply presents the information gathered from
-                <a style="color: #0076c0;"href="https://www.acmicpc.net/" target="_blank">Baekjoon</a> and
-                <a style="color: #17ce3a" href="https://solved.ac/" target="_blank">solved.ac</a>
-                in an organized manner and is not officially affiliated with them.</p>
-        </div>
-    </div>
-</div>
+</main>
 
 <style>
     .container {
