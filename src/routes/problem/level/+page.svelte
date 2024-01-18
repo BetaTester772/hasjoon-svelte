@@ -37,9 +37,12 @@
     30: {"name": "Ruby I", "color": "rgb(224, 0, 76)"}
   };
 
+  // const url = "http://localhost:8000"
+  const url = "https://api.hasjoon.net"
+
   onMount(async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/problem/level");
+      const response = await fetch(url + "/problem/level");
       if (response.ok) {
         const data = await response.json();
         problemList = data.problem_list;
@@ -70,11 +73,13 @@
             {#each problemList as problem}
                 <tr>
                     <td class="w-1/4 py-3 px-4" style="color: {rankDict[problem.level]['color']}">
-                    <span class="inline-flex items-center">
+                    <a href="/problem/level/{problem.level}">
+                        <span class="inline-flex items-center">
                         <img class="h-5 w-5 mr-2" src="https://static.solved.ac/tier_small/{problem.level}.svg"
                              alt="{problem.level}">
                         {rankDict[problem.level]["name"]}
-                    </span>
+                        </span>
+                    </a>
                     </td>
                     <td class="w-1/12 py-3 px-4">{problem.count}</td>
                     <td class="w-1/12 py-3 px-4">{problem.solved_count}</td>
