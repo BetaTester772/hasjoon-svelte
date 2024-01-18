@@ -28,6 +28,7 @@
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex space-x-4 text-base">
+                            <a href="/"> <img src="hasjoon_logo_white.png" alt="hasjoon logo" class="h-10 w-auto"></a>
                             <a href="/"
                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">홈</a>
 
@@ -59,7 +60,7 @@
 
     <slot></slot>
 
-    <div class="footer flex p-4 text-sm w-full">
+    <div class="footer flex p-4 text-sm w-full bg-gray-50">
         <div class="footer-section flex-1 text-left">
             <p>All the information of problems, users and icons related to them in this site are borrowed from
                 <a style="color: #0076c0;" href="https://www.acmicpc.net/" target="_blank">Baekjoon</a>
