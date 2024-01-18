@@ -73,13 +73,13 @@
             {#each problemList as problem}
                 <tr>
                     <td class="w-1/4 py-3 px-4" style="color: {rankDict[problem.level]['color']}">
-                    <a href="/problem/level/{problem.level}">
+<!--                    TODO: <a href="/problem/level/{problem.level}">-->
                         <span class="inline-flex items-center">
                         <img class="h-5 w-5 mr-2" src="https://static.solved.ac/tier_small/{problem.level}.svg"
                              alt="{problem.level}">
                         {rankDict[problem.level]["name"]}
                         </span>
-                    </a>
+<!--                    </a>-->
                     </td>
                     <td class="w-1/12 py-3 px-4">{problem.count}</td>
                     <td class="w-1/12 py-3 px-4">{problem.solved_count}</td>
