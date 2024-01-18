@@ -57,8 +57,9 @@
             </div>
         </div>
     </nav>
-
-    <slot></slot>
+    <div class="flex-grow flex">
+        <slot></slot>
+    </div>
 
     <div class="footer flex p-4 text-sm w-full bg-gray-50">
         <div class="footer-section flex-1 text-left">
