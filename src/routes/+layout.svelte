@@ -21,14 +21,14 @@
   });
 </script>
 
-<div class="flex flex-col min-h-screen">
+<div class="main-font-family flex flex-col min-h-screen">
     <nav>
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex space-x-4 text-base">
-                            <a href="/"> <img src="hasjoon_logo_white.png" alt="hasjoon logo" class="h-10 w-auto"></a>
+                            <a href="/"> <img src="/hasjoon_logo_white.png" alt="hasjoon logo" class="h-10 w-auto"></a>
                             <a href="/"
                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">홈</a>
 
@@ -102,5 +102,9 @@
         .footer-section {
             @apply flex-1 text-center mb-2;
         }
+    }
+
+    .main-font-family {
+        font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     }
 </style>
