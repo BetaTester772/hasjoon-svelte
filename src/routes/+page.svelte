@@ -63,7 +63,7 @@
 <div class="flex-grow flex items-center">
     <div class="content container flex flex-row mx-auto">
         <div class="text-container flex-1">
-            <h1><strong>오늘까지 <span style="color: #1d886f;">{Static.name}</span>는</strong></h1>
+            <h1><strong>오늘까지 <span style="color: #1d886f;"><a href="https://solved.ac/ranking/o/804" target="_blank">{Static.name}</a></span>는</strong></h1>
             <h1><strong>{Static.members}명</strong>의 구성원이</h1>
             <h1><strong>{Static.problemsSolved}개</strong>의 문제를 풀었고</h1>
             <h1><strong>AC rating {Static.acRating}</strong>로</h1>
