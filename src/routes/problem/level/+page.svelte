@@ -40,6 +40,17 @@
   // const url = "http://localhost:8000"
   const url = "https://api.hasjoon.net"
 
+  // New function to calculate the total width of the progress bar
+  const calculateTotalWidth = (total, maxTotal) => {
+    if (total > maxTotal) {
+      total = maxTotal;
+    }
+    return (total / maxTotal) * 100 + '%';
+  };
+
+  // Modify the onMount function to find the max count
+  let maxProblemCount = 0;
+
   onMount(async () => {
     try {
       const response = await fetch(url + "/problem/level");
@@ -51,6 +62,18 @@
       }
     } catch (error) {
       console.error("Network error:", error);
+    }
+
+    // Sort the problemList based on the count in descending order
+    const sortedProblemList = [...problemList].sort((a, b) => b.count - a.count);
+
+    // Check if level 0 has the highest count
+    if (sortedProblemList[0].level === 0) {
+      // Use the count of the next level as the maxProblemCount, or the level 0 count if there's only one level
+      maxProblemCount = sortedProblemList[1] ? sortedProblemList[1].count : sortedProblemList[0].count;
+    } else {
+      // If level 0 is not the highest, use the highest count
+      maxProblemCount = sortedProblemList[0].count;
     }
   });
 
@@ -73,19 +96,21 @@
             {#each problemList as problem}
                 <tr>
                     <td class="w-1/4 py-3 px-4" style="color: {rankDict[problem.level]['color']}">
-<!--                    TODO: <a href="/problem/level/{problem.level}">-->
+                        <!--                    TODO: <a href="/problem/level/{problem.level}">-->
                         <span class="inline-flex items-center">
                         <img class="h-5 w-5 mr-2" src="https://static.solved.ac/tier_small/{problem.level}.svg"
                              alt="{problem.level}">
-                        {rankDict[problem.level]["name"]}
+                            {rankDict[problem.level]["name"]}
                         </span>
-<!--                    </a>-->
+                        <!--                    </a>-->
                     </td>
                     <td class="w-1/12 py-3 px-4">{problem.count}</td>
                     <td class="w-1/12 py-3 px-4">{problem.solved_count}</td>
                     <td class="w-1/12 py-3 px-4">{problem.count - problem.solved_count}</td>
-                    <td class="w-1/2 py-3 px-4">
-                        <div class="relative pt-1">
+                    <td class="py-3 px-4">
+                        <div class="relative pt-1"
+                             style="width: {calculateTotalWidth(problem.count, maxProblemCount)};">
+                            <!-- Updated progress bar width -->
                             <div class="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
                                 <div style="width: {calculateWidth(problem.solved_count, problem.count)}; background-color: {rankDict[problem.level]['color']};"
                                      class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center transition-all duration-300 ease-in-out"></div>

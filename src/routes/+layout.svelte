@@ -45,7 +45,7 @@
                                     <a href="/problem/level"
                                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">레벨별
                                         문제</a>
-                                    <a href="/problem/tag"
+                                    <a href="/problem/tag/1"
                                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">태그별
                                         문제</a>
                                 </div>
