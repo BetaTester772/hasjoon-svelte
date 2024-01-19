@@ -36,10 +36,10 @@
         const notTried = 29168 - data.organization_data.solved_count;
 
         const graphData = {
-          labels: ['푼 문제', '만점에 도전하는 문제', '시도한 문제', '기타'],
+          labels: ['푼 문제', '아직 풀기 전인 문제'], //'만점에 도전하는 문제', '시도한 문제',
           datasets: [{
-            data: [solved, tried, failed, notTried],
-            backgroundColor: ['#2dd4ad', '#FFCE56', '#FF6384', '#36A2EB'],
+            data: [solved, notTried],
+            backgroundColor: ['#2dd4ad', '#36A2EB'], //  '#FFCE56', '#FF6384',
             borderWidth: 1
           }]
         };

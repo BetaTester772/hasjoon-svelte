@@ -59,7 +59,7 @@
         <table class="min-w-full bg-white text-left">
             <thead class="bg-gray-800 text-white">
             <tr>
-                <th class="w-1/4 py-3 px-4 uppercase font-semibold text-sm">레벨</th>
+                <th class="w-1/3 py-3 px-4 uppercase font-semibold text-sm">레벨</th>
                 <th class="w-1/12 py-3 px-4 uppercase font-semibold text-sm">미해결</th>
                 <th class="w-1/12 py-3 px-4 uppercase font-semibold text-sm">해결</th>
                 <th class="w-1/12 py-3 px-4 uppercase font-semibold text-sm">전체</th>
@@ -69,7 +69,7 @@
             <tbody class="text-gray-700 ">
             {#each problemList.slice(20 * (page_num - 1), 20 * page_num) as problem}
                 <tr>
-                    <td class="w-1/4 py-3 px-4"><span class="inline-flex items-center"><p>{problem.ko}</p>&nbsp;<p
+                    <td class="w-1/3 py-3 px-4"><span class="inline-flex items-center"><p>{problem.ko}</p>&nbsp;<p
                             class="text-gray-400">{problem.en}</p></span></td>
                     <td class="w-1/12 py-3 px-4">{problem.count - problem.solved_count}</td>
                     <td class="w-1/12 py-3 px-4">{problem.solved_count}</td>
