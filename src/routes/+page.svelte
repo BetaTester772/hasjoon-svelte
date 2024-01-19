@@ -58,19 +58,48 @@
       })
       .catch(err => console.log(err));
   });
+
+  // New variable to track input box display
+  let showInput = false;
+
+  // Function to toggle input box visibility
+  function toggleInput() {
+    showInput = !showInput;
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      const inputData = event.target.value;
+      if (inputData.trim() !== '') {
+        window.location.href = `/vs/${inputData}`;
+      } else {
+        showInput = false;
+      }
+    }
+  }
+
 </script>
 
 <div class="flex-grow flex items-center">
     <div class="content container flex flex-row mx-auto">
         <div class="text-container flex-1">
-            <h1><strong>오늘까지 <span style="color: #1d886f;"><a href="https://solved.ac/ranking/o/804" target="_blank">{Static.name}</a></span>는</strong></h1>
+            <h1><strong>오늘까지 <span style="color: #1d886f;"><a href="https://solved.ac/ranking/o/804"
+                                                              target="_blank">{Static.name}</a></span>는</strong></h1>
             <h1><strong>{Static.members}명</strong>의 구성원이</h1>
             <h1><strong>{Static.problemsSolved}개</strong>의 문제를 풀었고</h1>
             <h1><strong>AC rating {Static.acRating}</strong>로</h1>
             <h1>고등학교 <strong>{Static.hsRank}등</strong>,</h1>
-            <h1>전체 <strong>{Static.rank}등</strong>입니다.</h1>
+            <h1><span>전체 <strong>{Static.rank}등</strong>입니다.&nbsp;<a id="vs" class="text-2xl" on:click={toggleInput}><i
+                    class="fas fa-arrows-alt-h text-black hover:text-blue-500 text-2xl"/></a></span></h1>
+            <!--            here-->
+            {#if showInput}
+                <input type="text"
+                       placeholder="고등학교명을 입력해주세요."
+                       on:keypress={handleKeyPress}/>
+            {/if}
+
         </div>
-        <div class="graph-container flex-1">
+        <div class="graph-container flex-1">r
             <canvas id="graphCanvas"></canvas>
         </div>
     </div>
@@ -87,7 +116,7 @@
     }
 
     .text-container {
-        @apply p-5 ml-10 flex flex-col justify-center text-5xl text-left leading-snug;
+        @apply p-5 ml-10 flex-col justify-center text-5xl text-left leading-snug;
         word-break: keep-all;
     }
 
