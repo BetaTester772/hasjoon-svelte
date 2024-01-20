@@ -54,9 +54,9 @@
   const calculateWidth = (solved, total) => (solved / total) * 100 + '%';
 </script>
 
-<div class="container mx-auto sm:text-xs">
+<div class="container mx-auto">
     {#if problemList.length > 0}
-        <table class="min-w-full bg-white text-left sm:text-xs">
+        <table class="min-w-full bg-white text-left">
             <thead class="bg-gray-800 text-white">
             <tr>
                 <th class="w-1/3 py-3 px-4 uppercase font-semibold text-sm">레벨</th>
