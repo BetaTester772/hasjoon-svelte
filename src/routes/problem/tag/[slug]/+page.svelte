@@ -54,9 +54,9 @@
   const calculateWidth = (solved, total) => (solved / total) * 100 + '%';
 </script>
 
-<div class="container mx-auto">
+<div class="container mx-auto text-base sm:text-xs">
     {#if problemList.length > 0}
-        <table class="min-w-full bg-white text-left">
+        <table class="min-w-full bg-white text-left sm:text-xs">
             <thead class="bg-gray-800 text-white">
             <tr>
                 <th class="w-1/3 py-3 px-4 uppercase font-semibold text-sm">레벨</th>
@@ -88,10 +88,10 @@
             </tbody>
         </table>
 
-        <div class="flex justify-center space-x-2">
+        <div class="flex justify-center space-x-2 sm:space-x-0">
             {#each Array(totalPages) as _, i}
                 <a href={`/problem/tag/${i+1}`}>
-                    <button class="{page_num === (i + 1) ? 'pagination-btn-active' : 'pagination-btn'}">
+                    <button class="{page_num === (i + 1) ? 'pagination-btn-active' : 'pagination-btn'} sm:text-xs">
                         {i + 1}
                     </button>
                 </a>
@@ -137,5 +137,13 @@
         transition: all 0.3s ease; /* 부드러운 전환 효과 */
         background-color: #1d886f; /* Example: Change background color */
         color: white; /* Example: Change text color */
+    }
+
+    /* Adjust styles for smaller screens using media queries */
+    @media (max-width: 640px) { /* Tailwind's 'sm' breakpoint */
+        .pagination-btn, .pagination-btn-active {
+            padding: 2px 2px; /* Smaller padding */
+            font-size: 12px; /* Smaller font size */
+        }
     }
 </style>

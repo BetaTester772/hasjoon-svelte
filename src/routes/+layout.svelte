@@ -26,7 +26,7 @@
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="hidden sm:block sm:ml-6">
+                    <div class="sm:block sm:ml-6">
                         <div class="flex space-x-4 text-base">
                             <a href="/"> <img src="/hasjoon_logo_white.png" alt="hasjoon logo" class="h-10 w-auto"></a>
                             <a href="/"
@@ -38,7 +38,7 @@
                                         id="problems-menu" aria-haspopup="true">
                                     문제 <span>&#9662;</span>
                                 </button>
-                                <div class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                                <div class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
                                      id="problems-dropdown" hidden>
                                     <a href="/problem" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">모든
                                         문제</a>
@@ -50,14 +50,13 @@
                                         문제</a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="flex-grow flex">
+    <div class="flex-grow flex overflow-x-auto">
         <slot></slot>
     </div>
 
@@ -107,5 +106,14 @@
 
     .main-font-family {
         font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    }
+    .nav-links {
+        @apply hidden;
+    }
+
+    @media (min-width: 640px) {
+        .nav-links {
+            @apply block;
+        }
     }
 </style>

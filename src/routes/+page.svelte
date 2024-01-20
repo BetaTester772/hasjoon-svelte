@@ -159,7 +159,7 @@
             {/if}
 
         </div>
-        <div class="graph-container flex-1">r
+        <div class="graph-container flex-1">
             <canvas id="graphCanvas"></canvas>
         </div>
     </div>
