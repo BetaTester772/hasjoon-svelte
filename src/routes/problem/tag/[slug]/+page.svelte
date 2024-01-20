@@ -54,7 +54,7 @@
   const calculateWidth = (solved, total) => (solved / total) * 100 + '%';
 </script>
 
-<div class="container mx-auto text-base sm:text-xs">
+<div class="container mx-auto sm:text-xs">
     {#if problemList.length > 0}
         <table class="min-w-full bg-white text-left sm:text-xs">
             <thead class="bg-gray-800 text-white">
@@ -88,7 +88,7 @@
             </tbody>
         </table>
 
-        <div class="flex justify-center space-x-2 sm:space-x-0">
+        <div class="flex justify-center space-x-2">
             {#each Array(totalPages) as _, i}
                 <a href={`/problem/tag/${i+1}`}>
                     <button class="{page_num === (i + 1) ? 'pagination-btn-active' : 'pagination-btn'} sm:text-xs">
