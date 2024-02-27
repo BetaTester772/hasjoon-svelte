@@ -40,8 +40,9 @@
                                 </button>
                                 <div class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
                                      id="problems-dropdown" hidden>
-                                    <a href="/problem" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">모든
-                                        문제</a>
+<!--                                    TODO: make this page someday-->
+<!--                                    <a href="/problem" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">모든-->
+<!--                                        문제</a>-->
                                     <a href="/problem/level"
                                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">레벨별
                                         문제</a>
