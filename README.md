@@ -14,6 +14,6 @@
 
 ![image](/docs/images/tag.png)
 
-## go to backend
+## go to backend repo
 
 [click here](https://github.com/BetaTester772/hasjoon)
