@@ -12,7 +12,7 @@
 		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/kit": "^2.15.2",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",
-		"autoprefixer": "^10.4.20",
+		"autoprefixer": "^10.4.21",
 		"postcss": "^8.4.47",
 		"svelte": "^4.2.19",
 		"svelte-check": "^4.1.3",
